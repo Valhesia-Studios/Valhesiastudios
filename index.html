@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valhesia Studios — Criando Mundos Incríveis</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+body {
+  background-color: #0f0f11;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(20, 20, 25, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #3f0b6d;
+      z-index: 1000;
+      transition: 0.3s ease;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #b77bff;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      margin: 0 18px;
+      color: #ddd;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #b77bff;
+    }
+
+    /* ===== BANNER ===== */
+    .banner {
+      height: 100vh;
+      background: linear-gradient(rgba(15, 15, 18, 0.8), rgba(15, 15, 18, 0.8)),
+        url("https://i.imgur.com/KJnzXyE.gif") center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .banner h2 {
+      font-size: 60px;
+      color: #fff;
+      text-shadow: 0 0 20px #b77bff;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .banner p {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #ccc;
+      animation: fadeInUp 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 100px 120px;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 38px;
+      color: #b77bff;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+    }
+
+    section h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: #b77bff;
+      margin: 10px auto 40px;
+      border-radius: 5px;
+    }
+
+    section p {
+      max-width: 900px;
+      margin: auto;
+      color: #ccc;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* ===== PROJETOS ===== */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .project {
+      background: #1a1a1d;
+      border: 1px solid #3f0b6d;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.3s ease;
+      text-align: left;
+    }
+
+    .project img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 25px;
+    }
+
+    .project-content h3 {
+      color: #b77bff;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .project-content p {
+      color: #aaa;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px rgba(183, 123, 255, 0.3);
+    }
+
+    /* ===== EQUIPE ===== */
+    .team {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 50px;
+    }
+
+    .member {
+      background: #1a1a1d;
+      padding: 40px 25px;
+      border-radius: 20px;
+      border: 1px solid #3f0b6d;
+      transition: 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .member::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(183,123,255,0.1), transparent 70%);
+      transition: 0.5s;
+      opacity: 0;
+    }
+
+    .member:hover::before {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    .cargo {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #d4af37, #ffea8c, #d4af37);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 3s linear infinite;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+    }
+
+    @keyframes shine {
+      to { background-position: 200% center; }
+    }
+
+    .member img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #b77bff;
+      object-fit: cover;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
+    }
+
+    .member:hover img {
+      transform: scale(1.1);
+    }
+
+    .member h3 {
+      color: #fff;
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .member p {
+      color: #aaa;
+      font-size: 15px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #0a0a0b;
+      padding: 30px;
+      text-align: center;
+      color: #777;
+      font-size: 15px;
+      border-top: 1px solid #3f0b6d;
+    }
+
+    @media (max-width: 900px) {
+      header { padding: 15px 30px; }
+      section { padding: 80px 40px; }
+      .banner h2 { font-size: 42px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Valhesia Studios</h1>
+    <nav>
+      <a href="#sobre">Sobre Nós</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <div>
+      <h2>Criando Mundos Incríveis</h2>
+      <p>Transformamos ideias em experiências únicas dentro do universo Minecraft.</p>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre Nós</h2>
+    <p>
+      O <b>Valhesia Studios</b> é um estúdio criativo dedicado a construir mundos, histórias e experiências imersivas no Minecraft.
+      Unindo tecnologia, arte e narrativa, nossa missão é inspirar, conectar e encantar jogadores ao redor do mundo.
+    </p>
+  </section>
+
+  <section id="equipe">
+    <h2>Nossa Equipe</h2>
+    <div class="team">
+      <div class="member">
+        <div class="cargo">👑 Fundador</div>
+        <img src="https://i.imgur.com/squTW3a.png" alt="Floors">
+        <h3>Floors</h3>
+        <p>Diretor Criativo / Programador</p>
+      </div>
+      <div class="member">
+        <div class="cargo">👑 Fundador</div>
+        <img src="https://i.imgur.com/30gxWJV.png" alt="Chuvemo">
+        <h3>Chuvemo</h3>
+        <p>Idealizador</p>
+      </div>
+      <div class="member">
+        <div class="cargo">👑 Fundador</div>
+        <img src="https://i.imgur.com/1MB8dGm.png" alt="Snow">
+        <h3>Snow</h3>
+        <p>Idealizador</p>
+      </div>
+      <div class="member">
+        <div class="cargo">👑 Diretor</div>
+        <img src="https://i.imgur.com/d6iON22.png" alt="Nasbru">
+        <h3>Nasbru</h3>
+        <p>Criador de Conteúdo / Divulgador</p>
+      </div>
+    </div>
+  </section>
+
+    <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="https://i.imgur.com/FwOHAhk.gif" alt="Projeto 1">
+        <div class="project-content">
+          <h3>Valhesia SMP</h3>
+          <p>erro. erro descrição nao encontrada...</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://preview.redd.it/tnva3hgpheu71.gif?width=540&auto=webp&s=091ff091cdf7a1085707ded3d09216441cba2d68" alt="Projeto 2">
+        <div class="project-content">
+          <h3>Elaris Smp</h3>
+          <p>Um mundo tecnológico e sombrio onde sobreviventes enfrentam as consequências de experimentos interdimensionais.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="https://learistudios.com/assets/img/mapas/d490183f9c5ec79c01f1cbdcbcf2a47e.png" alt="Projeto 3">
+        <div class="project-content">
+          <h3>Endgame</h3>
+          <p>Uma serie de minigames evento inspirado na famosa serie da netflix round six!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section id="contato">
+  <h2>Contato</h2>
+  <p>
+    Deseja colaborar, contratar ou apenas conversar com nossa equipe?<br>
+    Envie um e-mail para 
+    <a href="mailto:studiosvalhesia@gmail.com" style="color: #b77bff; text-decoration: underline;">
+      studiosvalhesia@gmail.com
+    </a>
+    <br>
+    Ou fale conosco no Discord: 
+    <a href="https://discord.gg/cqPaJrK7fr" target="_blank" style="color: #b77bff; text-decoration: underline;">
+      Valhesia Studios
+    </a>
+  </p>
+</section>
+
+  <footer>
+    <p>© 2025 Valhesia Studios — Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
