@@ -12,16 +12,15 @@
       font-family: "Poppins", sans-serif;
     }
 
-body {
-  background-color: #0f0f11;
-  color: #fff;
-  overflow-x: hidden;
-}
+    body {
+      background-color: #0f0f11;
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
-
+    html {
+      scroll-behavior: smooth;
+    }
 
     /* ===== HEADER ===== */
     header {
@@ -172,12 +171,14 @@ html {
     }
 
     /* ===== EQUIPE ===== */
-    .team {
-      margin-top: 60px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 50px;
-    }
+.team {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: -0px; /* menos espaço horizontal entre os membros */
+  row-gap: 50px;   /* mantém espaço vertical entre linhas */
+  justify-items: center;
+}
 
     .member {
       background: #1a1a1d;
@@ -187,6 +188,8 @@ html {
       transition: 0.3s ease;
       position: relative;
       overflow: hidden;
+      width: 100%;
+      max-width: 300px;
     }
 
     .member::before {
@@ -263,6 +266,7 @@ html {
       header { padding: 15px 30px; }
       section { padding: 80px 40px; }
       .banner h2 { font-size: 42px; }
+      .team { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
     }
   </style>
 </head>
@@ -293,43 +297,48 @@ html {
   </section>
 
   <section id="equipe">
-  <h2>Nossa Equipe</h2>
-  <div class="team">
-    <div class="member">
-      <div class="cargo">👑 Fundador</div>
-      <img src="https://i.imgur.com/squTW3a.png" alt="Floors">
-      <h3>Floors</h3>
-      <p>Diretor Criativo / Programador</p>
+    <h2>Nossa Equipe</h2>
+    <div class="team">
+      <div class="member">
+        <div class="cargo">👑 Fundador</div>
+        <img src="https://i.imgur.com/squTW3a.png" alt="Floors">
+        <h3>Floors</h3>
+        <p>Diretor Criativo / Programador</p>
+      </div>
+      <div class="member">
+        <div class="cargo">👑 Fundador</div>
+        <img src="https://i.imgur.com/30gxWJV.png" alt="Chuvemo">
+        <h3>Chuvemo</h3>
+        <p>Idealizador</p>
+      </div>
+      <div class="member">
+        <div class="cargo">👑 Fundador</div>
+        <img src="https://i.imgur.com/1MB8dGm.png" alt="Snow">
+        <h3>Snow</h3>
+        <p>Idealizador</p>
+      </div>
+      <div class="member">
+        <div class="cargo">👑 Diretor</div>
+        <img src="https://i.imgur.com/d6iON22.png" alt="Nasbru">
+        <h3>Nasbru</h3>
+        <p>Criador de Conteúdo / Divulgador</p>
+      </div>
+      <div class="member">
+        <div class="cargo">👑 Diretor - Lore</div>
+        <img src="https://i.imgur.com/8Cc3x6g.png" alt="Gu4xiinim">
+        <h3>Gu4xiinim</h3>
+        <p>Designer Gráfico / Skin Maker</p>
+      </div>
+      <div class="member">
+        <div class="cargo">👑 Diretor - Model</div>
+        <img src="https://i.imgur.com/wDN9W4s.png" alt="White">
+        <h3>White</h3>
+        <p>Artista / Designer Visual / modelador</p>
+      </div>
     </div>
-    <div class="member">
-      <div class="cargo">👑 Fundador</div>
-      <img src="https://i.imgur.com/30gxWJV.png" alt="Chuvemo">
-      <h3>Chuvemo</h3>
-      <p>Idealizador</p>
-    </div>
-    <div class="member">
-      <div class="cargo">👑 Fundador</div>
-      <img src="https://i.imgur.com/1MB8dGm.png" alt="Snow">
-      <h3>Snow</h3>
-      <p>Idealizador</p>
-    </div>
-    <div class="member">
-      <div class="cargo">👑 Diretor</div>
-      <img src="https://i.imgur.com/d6iON22.png" alt="Nasbru">
-      <h3>Nasbru</h3>
-      <p>Criador de Conteúdo / Divulgador</p>
-    </div>
-    <div class="member">
-      <div class="cargo">👑 Diretor - lore</div>
-      <img src="https://i.imgur.com/8Cc3x6g.png" alt="Gu4xiinim">
-      <h3>Gu4xiinim</h3>
-      <p>Designer Gráfico/Skin Maker</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-
-    <section id="projetos">
+  <section id="projetos">
     <h2>Projetos</h2>
     <div class="projects">
       <div class="project">
@@ -350,33 +359,29 @@ html {
         <img src="https://learistudios.com/assets/img/mapas/d490183f9c5ec79c01f1cbdcbcf2a47e.png" alt="Projeto 3">
         <div class="project-content">
           <h3>Endgame</h3>
-          <p>Uma serie de minigames evento inspirado na famosa serie da netflix round six!</p>
+          <p>Uma série de minigames evento inspirada na famosa série da Netflix Round Six!</p>
         </div>
       </div>
     </div>
   </section>
 
-<section id="contato">
-  <h2>Contato</h2>
-  <p>
-    Deseja colaborar, contratar ou apenas conversar com nossa equipe?<br>
-    Envie um e-mail para 
-    <a href="mailto:studiosvalhesia@gmail.com" style="color: #b77bff; text-decoration: underline;">
-      studiosvalhesia@gmail.com
-    </a>
-    <br>
-    Ou fale conosco no Discord: 
-    <a href="https://discord.gg/cqPaJrK7fr" target="_blank" style="color: #b77bff; text-decoration: underline;">
-      Valhesia Studios
-    </a>
-  </p>
-</section>
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>
+      Deseja colaborar, contratar ou apenas conversar com nossa equipe?<br>
+      Envie um e-mail para 
+      <a href="mailto:studiosvalhesia@gmail.com" style="color: #b77bff; text-decoration: underline;">
+        studiosvalhesia@gmail.com
+      </a><br>
+      Ou fale conosco no Discord: 
+      <a href="https://discord.gg/cqPaJrK7fr" target="_blank" style="color: #b77bff; text-decoration: underline;">
+        Valhesia Studios
+      </a>
+    </p>
+  </section>
 
   <footer>
     <p>© 2025 Valhesia Studios — Todos os direitos reservados.</p>
   </footer>
 </body>
-
 </html>
-
-
